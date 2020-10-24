@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://kendo.cdn.telerik.com/2020.3.1021/styles/kendo.common.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://kendo.cdn.telerik.com/2020.3.1021/styles/kendo.default.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1021/js/kendo.all.min.js"></script>
+
+    <!-- Globalización, para incluir mensajes en español-->
+    <script src="https://kendo.cdn.telerik.com/2020.3.1021/js/messages/kendo.messages.es-ES.min.js"></script>
+  </head>
+  <body>
+      <div id="myWindow">Window Content</div>
+      <script>
+          // Inicializa el widget el cual ademas retorna el elemento del widget
+          var winElement1 = $('#myWindow').kendoWindow(
+              {
+                  /*...*/
+              }
+          ); // Retorna div#myWindow como un objeto jQuery
+          
+          var winObject = $('#myWindow').data('kendoWindow');
+
+          // Otras maneras de obtener el elemento del widget
+          var winElement2 = $('#myWindow');
+          var winElement3 = $('#myWindow').data('kendoWindow').element; // Retorna div#myWindow como un objeto jQuery
+          var winElement4 = winObject.element;
+
+          // Obtener el wrapper // contenedor
+          var winWrapper1 = $('#myWindow').data('kendoWindow').wrapper; // Retorna div.k-window como un objeto jQuery
+          var winWrapper2 = winObject.wrapper; // Retorna div.k-window como un objeto jQuery
+      </script>
+  </body>
+</html>
