@@ -16,50 +16,31 @@
 </head>
 
 <body>
-    <div id="example">
+
+    <div id="example">        
+        <button id="get" class="k-button">Get date</button>
         <div class="demo-section k-content" style="text-align: center;">
             <h4>Pick a date</h4>
             <div id="calendar"></div>
         </div>
 
-        <div>
-            Selected date: <label id="lblselectedDate"></label>
-        </div>
-
-        <input id="btnMostrarFecha" type="button" value="mostrar valor seleccionado" />
-
         <script>
-
-            // Para mostrar fecha seleccionada en calendario
-            function onChange() {
-                $("#lblselectedDate").text(kendo.toString(this.value(), 'd'));
-
-            }
-
             $(document).ready(function () {
-                // create Calendar from div HTML element
-                $("#calendar").kendoCalendar(
-                    {
-                        // Para implementar onChange
-                        change: onChange
-                    }
-                );
+                $("#calendar").kendoCalendar();
 
-                // Asignar valor de calendario a variable
-                var calendarValue = $("#calendar").data("kendoCalendar");
+                var calendar = $("#calendar").data("kendoCalendar");
                 calendar.value(new Date());
 
-                // Función de alerta sobre btnMostrarFecha
-                $("#btnMostrarFecha").click(function () {
-                    alert(calendarValue.value());
+                $("#get").click(function () {
+                    alert(calendar.value());
                 });
+
             });
-
-
-
-
         </script>
     </div>
+
+
+
 </body>
 
 </html>
